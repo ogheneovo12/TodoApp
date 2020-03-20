@@ -1,0 +1,109 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
+}
+body{
+  font-family:'century';
+}
+ 
+.formControl{
+  width:100%;
+  height:40px;
+  display: flex;
+  padding:0px;
+  background-color:blue;
+  margin-bottom:5px;
+  filter:drop-shadow(1px 1px 1px rgba(0,0,0,0.5));
+}
+.controlBtn{
+  height:40px;
+  width:21%;
+  background-color: rgba(75, 87, 41,0.6);
+  color:white;
+  font-weight: bold;
+  border:none;
+}
+.formControl .controlInput {
+  height:100%;
+  width:80%;
+  font-family:'century';
+  font-size: medium;
+  margin:0;
+}
+.container{
+  width:50%;
+  min-height:70vh;
+  margin:0 auto;
+  margin-top:10%;
+  margin-bottom:70px;
+  background:rgb(248,248,255);
+  box-shadow:
+-52px -52px 0px 0px #f65314,
+52px -52px 0px 0px #7cbb00,
+-52px 52px 0px 0px #00a1f1,
+52px 52px 0px 0px #ffbb00,
+inset 0px 0px 10px 0px #444444;
+
+}
+ul{
+  width:100%;
+  height: 100%;
+ font-family: 'Trocchi', serif; 
+ font-size: 18px; 
+ font-weight: normal; 
+ line-height: 12px;
+ text-transform: capitalize;
+}
+ul li:focus-within, ul li:hover{
+ background:#09c;
+ color:#fff !important;
+}
+
+ul li {
+ display:flex;
+ justify-content:space-around;
+ list-style: none;
+ box-shadow: 0px 0px 8px 2px #444444;
+ background-color:rgb(255,245,238); 
+ border-radius:5px;
+ margin-bottom:4px;
+ padding: 10px 5px;
+ color: #7c795d; 
+}
+
+.todo-text{
+ width:70%;
+ 
+}
+.todo-actions{
+display:flex;
+justify-content:space-between;
+text-align:right;
+ width:25%;
+}
+
+.todo-actions button{
+  background-color:rgb(128,128,0);
+  border:none;
+  padding:0.5em;
+  border-radius:100%;
+  box-shadow:inset 0px 0px 10px rgba(0,0,0,0.5);
+  color:#fff;
+}
+
+input[type="checkbox"]{
+content: '\a0'; /* non-break space */
+display: inline-block;
+vertical-align: .2em;
+width: 1.9em;
+height: 1.5em;
+margin-right: .2em;
+border-radius: .2em;
+text-indent: .15em;
+line-height: .65;
+}
+
+input[type="checkbox"]:checked{
+content: '\2713';
+}

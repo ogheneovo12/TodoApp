@@ -15,7 +15,11 @@ class App extends React.Component {
       }
     }
 generateId(){
-  return this.state.TodosApi[this.state.TodosApi.length-1].id + 1
+  if(typeof(this.state.TodosApi[this.state.TodosApi.length-1] ) !== "undefined"){
+  return this.state.TodosApi[this.state.TodosApi.length-1].id + 1;
+  }else{
+    return 0;
+  }
 }
 addTodo(name){
   this.setState({TodosApi:[...this.state.TodosApi,{name,done:false,id:this.generateId()}]});

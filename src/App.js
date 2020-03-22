@@ -6,24 +6,31 @@ import "./App.css"
 class App extends React.Component {
     constructor(){
       super()
+      this.onInputChange = this.onInputChange.bind(this)
       this.handleChange = this.handleChange.bind(this);
       this.addTodo = this.addTodo.bind(this)
       this.remTodo = this.remTodo.bind(this);
       this.state = {
         appName:'MyDay',
-        TodosApi,
+        TodosApi:TodosApi.sort((a,b)=>b.id - a.id),
+        text:""
       }
     }
 generateId(){
-  if(typeof(this.state.TodosApi[this.state.TodosApi.length-1] ) !== "undefined"){
-  return this.state.TodosApi[this.state.TodosApi.length-1].id + 1;
+  if(!(this.state.TodosApi.length === 0)){
+  return this.state.TodosApi[0].id + 1;
   }else{
     return 0;
   }
 }
-addTodo(name){
-  this.setState({TodosApi:[...this.state.TodosApi,{name,done:false,id:this.generateId()}]});
+onInputChange(e){
+    this.setState({text:e.target.value});
+}
+addTodo(){
+  const name = this.state.text;
+  this.setState({TodosApi:[{name,done:false,id:this.generateId()},...this.state.TodosApi,]});
   document.querySelector('.controlInput').value = "";
+  this.setState({text:''});
 }
 remTodo(id){
    this.setState(prevState => {
@@ -51,14 +58,15 @@ handleChange(id,e){
   }
 
 searchTodos(){
-
+      
 }
 render(){
+    
        return  (
          <div>
-       
+       <input type="checkbox" id="sidebarShown" hidden />
        <div className="container" >
-       <InputHandler  addTodo={this.addTodo}/>
+       <InputHandler onInputChange={this.onInputChange}  addTodo={this.addTodo}/>
        <Todos handleChange={this.handleChange} remTodo = {this.remTodo} TodosApi={this.state.TodosApi}/>
        </div>
        </div>

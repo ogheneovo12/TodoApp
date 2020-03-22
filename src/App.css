@@ -55,21 +55,17 @@ ul{
  line-height: 12px;
  text-transform: capitalize;
 }
-ul li:focus-within, ul li:hover{
- background:#09c;
- color:#fff !important;
-}
 
 ul li {
  display:flex;
  justify-content:space-around;
  list-style: none;
  box-shadow: 0px 0px 8px 2px #444444;
- background-color:rgb(255,245,238); 
+ background-color:#09c;
  border-radius:5px;
  margin-bottom:4px;
  padding: 10px 5px;
- color: #7c795d; 
+ /* color: #7c795d;  */
 }
 
 .todo-text{
@@ -91,6 +87,7 @@ text-align:right;
   box-shadow:inset 0px 0px 10px rgba(0,0,0,0.5);
   color:#fff;
 }
+
 
 input[type="checkbox"]{
 content: '\a0'; /* non-break space */

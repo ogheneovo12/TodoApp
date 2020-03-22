@@ -4,8 +4,8 @@ import PropTypes from 'prop-types';
 
 function TodoItem (props){
   
-   return (<li>
-   <span className="todo-text" style = {{textDecoration: props.done ?" line-through":"none"}}> {props.name} </span>
+   return (<li id="type" style={{backgroundColor:props.done?'#fff':'#09c', color:props.done?"#7c795d":"#fff"}}>
+   <span className="todo-text" style = {{textDecoration: props.done ?" line-through":"none", } }> {props.name} </span>
         <span className="todo-actions"> <input type="checkbox" onChange={props.handleChange.bind(this,props.id)} checked={props.done}/> 
         <label></label>
         <button onClick={props.remTodo.bind(this,props.id)} >&times;</button> </span>

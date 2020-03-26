@@ -71,6 +71,9 @@ ul li {
  border-radius:5px;
  margin-bottom:4px;
  padding: 10px 5px;
+ transition-duration: 1s;
+ transition: all ease-in;
+
  /* color: #7c795d;  */
 }
 
